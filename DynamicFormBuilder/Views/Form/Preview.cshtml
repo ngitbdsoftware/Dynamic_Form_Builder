@@ -1,0 +1,33 @@
+﻿@model DynamicFormBuilder.Models.FormDto
+
+@{
+    ViewData["Title"] = "Preview Form";
+}
+
+<h2>@Model.Title</h2>
+
+<form>
+    @foreach (var field in Model.Fields)
+    {
+        <div class="form-group" style="margin-bottom:15px;">
+            <label>
+                @field.Label
+                @if (field.IsRequired)
+                {
+                    <span style="color:red">*</span>
+                }
+            </label>
+
+            <!-- Render dropdown via ViewComponent -->
+            @await Component.InvokeAsync(
+                "Dropdown",
+                new {
+                    optionId = 1,
+                    selectedId = field.SelectedOptionValueId,
+                    name = "field_" + field.FieldId,
+                    isRequired = field.IsRequired
+                }
+            )
+        </div>
+    }
+</form>

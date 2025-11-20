@@ -1,0 +1,21 @@
+﻿@model List<DynamicFormBuilder.Models.OptionDto>
+
+@{
+    var name = (string)ViewData["Name"];
+    var sel = (int?)ViewData["SelectedId"];
+    var req = (bool)ViewData["IsRequired"];
+}
+
+<select name="@name" class="form-control" data-required="@req">
+    <option value="">-- Select --</option>
+
+    @foreach (var o in Model)
+    {
+        <option value="@o.OptionValueId" selected="@(sel == o.OptionValueId ? "selected" : null)">@o.Value</option>
+    }
+</select>
+
+@if (req)
+{
+    <span style="color:red">*</span>
+}

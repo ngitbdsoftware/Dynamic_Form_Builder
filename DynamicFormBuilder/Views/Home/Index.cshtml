@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Forms";
+}
+
+<div style="margin-bottom:15px;">
+    <a class="btn" href="/Form/Create">Create New Form</a>
+</div>
+
+<table id="formsTable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>FormId</th>
+            <th>Title</th>
+            <th>CreatedDate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+    $(document).ready(function () {
+
+        $('#formsTable').DataTable({
+            processing: true,
+            serverSide: true,
+
+            ajax: {
+                url: '/Home/List',
+                type: 'POST'
+            },
+
+            columns: [
+                { data: 'formId' },
+                { data: 'title' },
+                { data: 'createdDate', defaultContent: '' },
+                {
+                    data: null,
+                    render: function (d) {
+                        return `<a href="/Form/Preview?id=${d.formId}">Preview</a>`;
+                    }
+                }
+            ]
+        });
+
+    });
+</script>

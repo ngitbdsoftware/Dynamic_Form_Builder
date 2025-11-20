@@ -1,0 +1,67 @@
+/* Basic Container */
+.container {
+    max-width: 950px;
+    margin: 25px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Generic Button Style */
+.btn {
+    padding: 8px 15px;
+    background: #2a7ae2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    .btn:hover {
+        background: #1f5fb8;
+    }
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Dynamic Field Item */
+.field-item {
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+/* Remove Button */
+.remove-field {
+    background: #d9534f;
+    color: #fff;
+}
+
+    .remove-field:hover {
+        background: #b52b27;
+    }
+
+/* Form Preview Dropdown (Disabled look) */
+select[disabled] {
+    background-color: #e9ecef;
+    color: #555;
+}
+
+/* Preview Form Label */
+.form-group label {
+    font-weight: bold;
+}
+
+/* DataTables adjustments */
+.dataTables_wrapper .dataTables_filter input {
+    padding: 5px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    padding: 5px;
+}

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Create Form";
+    var defaultOptionId = (int)ViewData["DefaultOptionId"];
+}
+
+<h2>Create New Form</h2>
+
+<div>
+    <label>Form Title</label>
+    <input id="formTitle" class="form-control" />
+</div>
+
+<div style="margin-top:10px;">
+    <button id="addField" class="btn">Add More</button>
+</div>
+
+<form id="fieldsContainer" style="margin-top:15px;">
+    <!-- dynamic dropdown fields will be added here -->
+</form>
+
+<div style="margin-top:15px;">
+    <button id="submitForm" class="btn">Submit</button>
+</div>
+
+<script>
+    // pass default option group id to JS
+    window.defaultOptionId = @defaultOptionId;
+</script>
